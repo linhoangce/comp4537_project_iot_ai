@@ -48,7 +48,7 @@ export function SignupForm({ ...props }: React.ComponentProps<typeof Card>) {
 
 			alert("Signup successful!");
 			router.push("/login");
-		} catch (error: unknown) {
+		} catch (error: any) {
 			console.error("Signup Error: ", error.message);
 			alert(error.message);
 		}
