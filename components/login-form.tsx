@@ -32,7 +32,7 @@ export function LoginForm({ className, ...props }: React.ComponentProps<"div">) 
 
 		try {
 			const response = await fetch(
-				"https://comp4537-exexd9bdh3d6f7d9.canadacentral-01.azurewebsites.net/auth/login",
+				"https://term-project-com4537-h5g7d6adgeeffbft.canadacentral-01.azurewebsites.net/auth/login",
 				{
 					method: "POST",
 					headers: {

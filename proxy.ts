@@ -24,7 +24,7 @@ export async function proxy(request: NextRequest) {
 		const id = setTimeout(() => controller.abort(), 2000);
 
 		const response = await fetch(
-			"https://comp4537-exexd9bdh3d6f7d9.canadacentral-01.azurewebsites.net/auth/me",
+			"https://term-project-com4537-h5g7d6adgeeffbft.canadacentral-01.azurewebsites.net/auth/me",
 			{
 				headers: { cookie },
 				signal: controller.signal,

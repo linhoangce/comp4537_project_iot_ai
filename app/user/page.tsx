@@ -6,9 +6,12 @@ export default function UserPage() {
 	const [data, setData] = useState(null);
 
 	useEffect(() => {
-		fetch("https://comp4537-exexd9bdh3d6f7d9.canadacentral-01.azurewebsites.net/api/user", {
-			credentials: "include",
-		})
+		fetch(
+			"https://term-project-com4537-h5g7d6adgeeffbft.canadacentral-01.azurewebsites.net/api/user",
+			{
+				credentials: "include",
+			},
+		)
 			.then((res) => res.json())
 			.then((json) => setData(json.user));
 	}, []);
