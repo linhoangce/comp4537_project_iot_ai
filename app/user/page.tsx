@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import PhoneAgent from "@/components/PhoneAgent";
 
 export default function UserPage() {
   const [data, setData] = useState(null);
@@ -26,5 +27,12 @@ export default function UserPage() {
       .catch((err) => console.error("Fetch error:", err));
   }, []);
 
-  return <div>{data ? data : "Loading..."}</div>;
+  return (
+	<div>
+		<div className="text-2xl font-bold mb-4">
+			 {data ? `Welcome to the ${data} Dashboarddata` : "Loading..."}
+			</div>
+			<PhoneAgent />
+		
+		</div>);
 }
