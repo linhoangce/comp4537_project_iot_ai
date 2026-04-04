@@ -8,7 +8,7 @@ export async function proxy(request: NextRequest) {
 	if (
 		pathname.startsWith("/_next") ||
 		pathname.startsWith("/api") ||
-		pathname.startsWith("/auth") || // ✅ ADD THIS
+		pathname.startsWith("/auth") ||
 		pathname.includes(".") ||
 		pathname === "/login" ||
 		pathname === "/signup"
@@ -23,13 +23,13 @@ export async function proxy(request: NextRequest) {
 		const controller = new AbortController();
 		const id = setTimeout(() => controller.abort(), 2000);
 
-		const response = await fetch(
-			"https://term-project-com4537-h5g7d6adgeeffbft.canadacentral-01.azurewebsites.net/auth/me",
-			{
-				headers: { cookie },
-				signal: controller.signal,
+		const response = await fetch("https://comp4537-project-iot-ai-backend.onrender.com/auth/me", {
+			headers: {
+				Cookie: cookie, // Ensure the header key is exactly "Cookie"
+				Accept: "application/json",
+				"Cache-Control": "no-cache", // Prevent middleware from caching old auth states
 			},
-		);
+		});
 
 		clearTimeout(id);
 		const data = await response.json();

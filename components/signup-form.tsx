@@ -26,7 +26,7 @@ export function SignupForm({ ...props }: React.ComponentProps<typeof Card>) {
 
 		try {
 			const response = await fetch(
-				"https://term-project-com4537-h5g7d6adgeeffbft.canadacentral-01.azurewebsites.net/auth/signup",
+				"https://comp4537-project-iot-ai-backend.onrender.com/auth/signup",
 				{
 					method: "POST",
 					headers: {

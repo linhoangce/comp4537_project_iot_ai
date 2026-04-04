@@ -16,7 +16,7 @@ bun dev
 ```
 
 Open
-[https://term-project-com4537-h5g7d6adgeeffbft.canadacentral-01.azurewebsites.net](https://term-project-com4537-h5g7d6adgeeffbft.canadacentral-01.azurewebsites.net)
+[https://comp4537-project-iot-ai-backend.onrender.com](https://comp4537-project-iot-ai-backend.onrender.com)
 with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the
