@@ -30,7 +30,7 @@ export default function UserPage() {
   return (
 	<div>
 		<div className="text-2xl font-bold mb-4">
-			 {data ? `Welcome to the ${data} Dashboarddata` : "Loading..."}
+			 {data ? `Welcome to the ${data}` : "Loading..."}
 			</div>
 			<PhoneAgent />
 		
