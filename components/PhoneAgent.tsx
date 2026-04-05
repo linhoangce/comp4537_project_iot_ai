@@ -19,6 +19,7 @@ export default function PhoneAgent() {
 					headers: {
 						"Content-Type": "application/json",
 					},
+					credentials: "include",
 					body: JSON.stringify({ phoneNumber }),
 				},
 			);
@@ -37,6 +38,9 @@ export default function PhoneAgent() {
 		if (!callSid) return;
 		const res = await fetch(
 			`https://comp4537-project-iot-ai-backend.onrender.com/api/transcript/${callSid}`,
+			{
+				credentials: "include",
+			},
 		);
 		const data = await res.json();
 		setTranscript(data.transcript || []);
