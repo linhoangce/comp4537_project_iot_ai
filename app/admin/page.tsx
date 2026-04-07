@@ -1,5 +1,6 @@
 "use client";
 
+import LogOut from "@/components/LogOut";
 import { useEffect, useState } from "react";
 
 export default function AdminDashboard() {
@@ -24,7 +25,11 @@ export default function AdminDashboard() {
 	}
 
 	return (
-		<div className="p-8 max-w-4xl mx-auto">
+		<div className="relative min-h-screen p-8">
+			{/* --- Logout Button Container --- */}
+			<div className="fixed top-6 right-6 z-50">
+				<LogOut />
+			</div>
 			<h1 className="text-3xl font-bold mb-6">Admin Usage Monitor</h1>
 
 			<div className="overflow-x-auto bg-white shadow rounded-lg text-black">
@@ -48,7 +53,7 @@ export default function AdminDashboard() {
 					<tbody className="divide-y divide-gray-200">
 						{usage.map((user) => (
 							<tr key={user.id}>
-								<td className="px-6 py-4 whitespace-nowrap">{user.fullname}</td>
+								<td className="px-6 py-4 whitespace-nowrap">{user.name}</td>
 								<td className="px-6 py-4 whitespace-nowrap">{user.email}</td>
 								<td className="px-6 py-4 whitespace-nowrap font-bold">{user.total_calls || 0}</td>
 								<td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
