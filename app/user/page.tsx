@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import PhoneAgent from "@/components/PhoneAgent";
+import LogOut from "@/components/LogOut";
 
 export default function UserPage() {
 	const [data, setData] = useState(null);
@@ -28,11 +29,20 @@ export default function UserPage() {
 	}, []);
 
 	return (
-		<div>
-			<div className="text-2xl font-bold mb-4">
-				{data ? `Welcome to the ${data}` : "Loading..."}
+		<div className="relative min-h-screen p-8">
+			{/* --- Logout Button Container --- */}
+			<div className="fixed top-6 right-6 z-50">
+				<LogOut />
 			</div>
-			<PhoneAgent />
+
+			{/* --- Main Content --- */}
+			<div className="max-w-lg mx-auto">
+				<div className="text-2xl font-bold mb-4 text-center">
+					{data ? `Welcome to the ${data}` : "Loading..."}
+				</div>
+
+				<PhoneAgent />
+			</div>
 		</div>
 	);
 }
