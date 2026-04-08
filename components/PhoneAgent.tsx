@@ -66,8 +66,13 @@ export default function PhoneAgent() {
 
 	return (
 		<div className="p-8 max-w-lg mx-auto flex flex-col gap-4">
-			<h1 className="text-2xl font-bold">AI Phone Agent Demo</h1>
+			{/* <h1 className="text-2xl font-bold">AI Phone Agent Demo</h1> */}
 
+      <div>
+        <p className="text-sm text-gray-500 mb-1">Enter your phone number to receive a call from our AI agent. The agent will introduce itself and 
+          answer your questions.</p>
+        <p className="text-sm text-gray-500">Try asking it about the weather, news, or even to tell a joke!</p>
+      </div>
 			<input
 				type="tel"
 				placeholder="+1234567890"
