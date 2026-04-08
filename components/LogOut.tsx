@@ -22,7 +22,7 @@ export default function LogOut() {
 		<div className="flex justify-end">
 			<button
 				onClick={handleLogout}
-				className="text-sm bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700 transition"
+				className="text-sm bg-black text-white px-3 py-1 rounded hover:bg-red-600 transition"
 			>
 				Log Out
 			</button>
