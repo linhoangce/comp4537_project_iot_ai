@@ -82,9 +82,9 @@ export function SignupForm({ ...props }: React.ComponentProps<typeof Card>) {
 								name="email"
 								required
 							/>
-							<FieldDescription>
+							{/* <FieldDescription>
 								We&apos;ll use this to contact you. We will not share your email with anyone else.
-							</FieldDescription>
+							</FieldDescription> */}
 						</Field>
 						<Field>
 							<FieldLabel htmlFor="password">Password</FieldLabel>
@@ -94,7 +94,7 @@ export function SignupForm({ ...props }: React.ComponentProps<typeof Card>) {
 								name="password"
 								required
 							/>
-							<FieldDescription>Must be at least 8 characters long.</FieldDescription>
+							{/* <FieldDescription>Must be at least 8 characters long.</FieldDescription> */}
 						</Field>
 						<Field>
 							<FieldLabel htmlFor="confirm-password">Confirm Password</FieldLabel>

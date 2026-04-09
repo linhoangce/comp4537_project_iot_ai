@@ -4,21 +4,36 @@ import LogOut from "@/components/LogOut";
 import { useEffect, useState } from "react";
 
 export default function AdminDashboard() {
-	const [data, setData] = useState(null);
 	const [usage, setUsage] = useState<any[]>([]);
 	const [loading, setLoading] = useState(false);
+	const [isCheckingAuth, setIsCheckingAuth] = useState(true);
 
 	useEffect(() => {
 		fetch("https://comp4537-project-iot-ai-backend.onrender.com/admin/usage", {
 			credentials: "include",
 		})
-			.then((res) => res.json())
+			.then((res) => {
+				if (res.status === 401 || res.status === 403) {
+					window.location.href = "/login";
+					return;
+				}
+				return res.json();
+			})
 			.then((data) => {
 				setUsage(Array.isArray(data) ? data : []);
 				setLoading(false);
 			})
-			.catch(() => setLoading(false));
+			.catch(() => setLoading(false))
+			.finally(() => setIsCheckingAuth(false));
 	}, []);
+
+	if (isCheckingAuth) {
+		return (
+			<div className="flex items-center justify-center min-h-screen">
+				<p className="text-gray-500 animate-pulse">Authenticating...</p>
+			</div>
+		);
+	}
 
 	if (loading) {
 		return <div className="p-8">Loading stats...</div>;
